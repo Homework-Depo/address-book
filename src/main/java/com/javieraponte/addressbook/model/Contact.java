@@ -21,9 +21,8 @@ public class Contact {
     private String address;
     private String profilePicture;
 
-    public Contact(Long id, String firstName, String lastName, String email, String phoneNumber, String address,
+    public Contact(String firstName, String lastName, String email, String phoneNumber, String address,
                    String profilePicture) {
-        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -89,5 +88,18 @@ public class Contact {
 
     public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", profilePicture='" + profilePicture + '\'' +
+                '}';
     }
 }
