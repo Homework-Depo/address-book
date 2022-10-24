@@ -1,7 +1,11 @@
 package com.javieraponte.addressbook.repository;
 
 import com.javieraponte.addressbook.model.Contact;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ContactRepository extends CrudRepository<Contact, Long> {
+import java.util.List;
+
+public interface ContactRepository extends JpaRepository<Contact, Long> {
+
+    public List<Contact> findAllByOrderByIdAsc();
 }

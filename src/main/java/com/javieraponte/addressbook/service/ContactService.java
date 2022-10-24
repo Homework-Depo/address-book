@@ -20,19 +20,16 @@ public class ContactService {
     }
 
     public List<Contact> findAllContacts() {
-        List<Contact> contacts = new ArrayList<>();
 
-        contactRepository.findAll().forEach(contacts::add);
-
-        return contacts;
+        return contactRepository.findAllByOrderByIdAsc();
     }
 
     public Optional<Contact> findContactById(Long id) {
         return contactRepository.findById(id);
     }
 
-    public Contact saveContact(Contact contact) {
-        return contactRepository.save(contact);
+    public void saveContact(Contact contact) {
+        contactRepository.save(contact);
     }
 
     public void deleteContactById(Long id) {
